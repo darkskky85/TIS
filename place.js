@@ -5,6 +5,8 @@ const PlaceSchema=new Schema({
   title: String,
   description: String,
   image: String,
+  longitude: String,
+  latitude: String,
   favoritesCount: {type: Number, default: 0},
 })
 

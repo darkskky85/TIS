@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const dbURI = "mongodb://localhost:27017/tourism";
+const dbURI = "mongodb+srv://darkskky85:Dd757575@cluster0.95glwg0.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(dbURI);
 

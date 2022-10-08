@@ -6,6 +6,7 @@ const app = express();
 const db = require("./db");
 const User = require("./user");
 const Place = require("./place");
+const port = process.env.PORT || 3000
 // console.log(Place);
 
 app.use(express.json());
@@ -122,7 +123,7 @@ app.post("/users/login", (req, res) => {
   });
 });
 
-app.listen(5000, () => {
+app.listen(port, () => {
   console.log("SERVER IS WORKING ..");
 });
 

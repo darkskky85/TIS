@@ -6,6 +6,9 @@ const PlaceSchema=new Schema({
   description: String,
   image: String,
   region: String,
+  title_en: String,
+  description_en: String,
+  region_en: String,
   favoritesCount: {type: Number, default: 0},
 })
 

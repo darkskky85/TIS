@@ -45,7 +45,7 @@ app.get("/places/:id", (req, res) => {
 });
 
 // Favorite an article
-app.post('/article/favorite', function(req, res, next) {
+app.post('/add/favorite', function(req, res, next) {
   var articleId = req.body.article_id;
   Place.findById(articleId).then(function (article) {
     if (!article) { return res.sendStatus(404); }
@@ -63,7 +63,7 @@ app.post('/article/favorite', function(req, res, next) {
 });
 
 // Unfavorite an article
-app.delete('/article/favorite', function(req, res, next) {
+app.post('/delete/favorite', function(req, res, next) {
   var articleId = req.body.article_id;
   Place.findById(articleId).then(function (article) {
     if (!article) { return res.sendStatus(404); }

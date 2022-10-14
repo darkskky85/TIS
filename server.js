@@ -6,7 +6,6 @@ const app = express();
 const db = require("./db");
 const User = require("./user");
 const Place = require("./place");
-const port = process.env.PORT || 3000
 // console.log(Place);
 
 app.use(express.json());
@@ -51,7 +50,7 @@ app.post('/:article/favorite', function(req, res, next) {
   Place.findById(articleId).then(function (article) {
     if (!article) { return res.sendStatus(404); }
 
-  User.findOne({email: req.body.uesrEmail}).then(function(user){
+  User.findOne({email: req.body.userEmail}).then(function(user){
     if (!user) { return res.sendStatus(401); }
 
     return user.favorite(articleId).then(function(){
@@ -69,7 +68,7 @@ app.delete('/:article/favorite', function(req, res, next) {
   Place.findById(articleId).then(function (article) {
     if (!article) { return res.sendStatus(404); }
 
-  User.findOne({email: req.body.uesrEmail}).then(function (user){
+  User.findOne({email: req.body.userEmail}).then(function (user){
     if (!user) { return res.sendStatus(401); }
 
     return user.unfavorite(articleId).then(function(){
@@ -123,7 +122,7 @@ app.post("/users/login", (req, res) => {
   });
 });
 
-app.listen(port, () => {
+app.listen(5000, () => {
   console.log("SERVER IS WORKING ..");
 });
 
